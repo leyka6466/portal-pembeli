@@ -83,7 +83,7 @@ function build(b){return sh(SC[b-1].m).slice(0,30).map(s=>{var p=s.split('|'),dg
 var H={};try{H=JSON.parse(localStorage.getItem('rbt1_v1'))||{}}catch(x){}
 var A=document.getElementById('app'),C={},tm=s=>Math.floor(s/60)+'m '+s%60+'s';
 var ac;function snd(f,d,t){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();var o=ac.createOscillator(),g=ac.createGain();o.type=t||'sine';o.frequency.value=f;g.gain.value=.1;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(x){}}
-function menu(){var h='<button class="bk" onclick="location.href=HOME">🏠 Halaman Utama (pilih subjek lain)</button><div class="card"><div class="big">🛠️</div><h1>Reka Bentuk dan Teknologi Tingkatan 1</h1><p>5 bab. Setiap pusingan 30 soalan objektif, ada gambar rajah.</p></div>';
+function menu(){var h='<button class="bk" onclick="location.href=HOME">🏠 Halaman Utama </button><div class="card"><div class="big">🛠️</div><h1>Reka Bentuk dan Teknologi Tingkatan 1</h1><p>5 bab. Setiap pusingan 30 soalan objektif, ada gambar rajah.</p></div>';
   TB.forEach((t,i)=>{var u=i+1,l=H[u]||[],b=l.reduce((m,x)=>Math.max(m,x.p),0);
     h+='<div class="card un"><div class="tx"><b>Bab '+u+'</b> '+e(t)+'<small>'+(l.length?l.length+' cubaan · Terbaik '+b+'/30':'Belum dimain')+'</small></div><div class="bt"><button class="b5" onclick="nt('+u+')">📘</button><button onclick="go('+u+')">▶️</button><button class="b3" onclick="hist('+u+')">📒</button></div></div>'});
   A.innerHTML=h;scrollTo(0,0)}
